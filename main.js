@@ -1,7 +1,6 @@
 
 const API_TOKEN = "30d71a74ad1c665d279168dca98378581270be4587da3ab13c51ffde8de4cbae";
 
-// Elements DOM
 const postalInput = document.getElementById("postal-input");
 const cityDropdown = document.getElementById("cityDropdown");
 const submitBtn = document.getElementById("submitBtn");
@@ -14,7 +13,6 @@ const weatherGrid = document.getElementById("weatherGrid");
 const errorMessage = document.getElementById("errorMessage");
 const locationForm = document.getElementById("locationForm");
 
-// Variables globales
 let selectedCity = null;
 let weatherData = [];
 
@@ -408,7 +406,7 @@ function getOutfitRecommendation(weatherCode, tempMin, tempMax) {
         
         outfit.items.push("Vêtements visibles", "Veste légère");
     } else if (weatherCode === 0 && avgTemp >= 20) {
-        // Grand soleil
+        
         outfit.items.push("Lunettes de soleil", "Crème solaire", "Chapeau");
     }
 
