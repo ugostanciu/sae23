@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Weather</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">INSTANT<span>WEATHER</span></div>
+            <div class="home-button" onclick="location.reload()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+            </div>
+        </header>
+
+        <main>
+            <div class="form-container" id="locationForm">
+                <div class="error-message" id="errorMessage"></div>
+                
+                <form id="weatherForm">
+                    <div class="form-group">
+                        <label for="postal-input">Code postal</label>
+                        <input type="text" id="postal-input" placeholder="Ex: 75001" maxlength="5">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cityDropdown" class="sr-only">Choisissez votre ville</label>
+                        <select id="cityDropdown" style="display: none;">
+                            <option value="">Sélectionnez une ville</option>
+                        </select>
+                    </div>
+                    
+                    <div class="range-container">
+                        <div class="range-display">
+                            <label for="daySlider">Nombre de jours :</label>
+                            <span class="range-value" id="sliderValue">1 jour</span>
+                        </div>
+                        <input type="range" id="daySlider" min="1" max="7" value="1">
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="coordinates" value="coordinates">
+                            <label for="coordinates">Coordonnées GPS</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="rain" value="rain">
+                            <label for="rain">Cumul de pluie</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="wind" value="wind">
+                            <label for="wind">Vent moyen</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="winddir" value="winddir">
+                            <label for="winddir">Direction du vent</label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn" disabled>
+                        Obtenir les prévisions
+                    </button>
+                </form>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Chargement des données météorologiques...</p>
+            </div>
+
+            <div class="weather-results" id="weatherResults">
+                <div class="weather-grid" id="weatherGrid"></div>
+                <button class="reload-button" onclick="location.reload()">
+                    Nouvelle recherche
+                </button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
