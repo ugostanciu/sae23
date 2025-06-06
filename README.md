@@ -23,10 +23,9 @@ Les données sont obtenues en temps réel grâce à deux APIs publiques :
 
 ## 🧰 Langages et technologies utilisés
 
-- **HTML5** : structure de la page
-- **CSS3** : stylisation (via un fichier `style.css` et Google Fonts)
-- **JavaScript (Vanilla)** : interactions dynamiques, requêtes API, gestion du DOM
-- **APIs REST** : intégration d'APIs météo et géographiques
+- **HTML** : structure de la page
+- **CSS** : stylisation (via un fichier `style.css` et Google Fonts)
+- **JavaScript** : interactions dynamiques, requêtes API, gestion du DOM
 
 ---
 
